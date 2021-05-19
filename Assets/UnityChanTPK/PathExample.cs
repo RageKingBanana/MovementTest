@@ -21,10 +21,10 @@ public class PathExample : MonoBehaviour
         {
             value += Time.deltaTime / 10;
         }
-       iTween.PutOnPath(m_PlayerObj, positionPoint, value);
+       //iTween.PutOnPath(m_PlayerObj, positionPoint, value);
        // iTween.PointOnPath(positionPoint, value);
        //iTween.MoveTo(m_PlayerObj, iTween.Hash("walk", iTween.PutOnPath(positionPoint), "orienttopath", true, "lookahead", .5f, "time", 500));
-       //iTween.MoveTo(gameObject, iTween.Hash("walk", 5, "time", 1, "islocal", true));    
+       iTween.MoveTo(m_PlayerObj, iTween.Hash("walk", 5, "time", 100, "orienttopath", true));    
     }
     private void OnDrawGizmos()
     {
