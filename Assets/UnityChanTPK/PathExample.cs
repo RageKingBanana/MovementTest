@@ -5,6 +5,7 @@ using UnityEngine;
 public class PathExample : MonoBehaviour
 {
     public GameObject m_PlayerObj;
+    public GameObject m_walk;
     public Transform[] positionPoint;
     [Range(0,1)]
     public float value;
@@ -24,7 +25,7 @@ public class PathExample : MonoBehaviour
        //iTween.PutOnPath(m_PlayerObj, positionPoint, value);
        // iTween.PointOnPath(positionPoint, value);
        //iTween.MoveTo(m_PlayerObj, iTween.Hash("walk", iTween.PutOnPath(positionPoint), "orienttopath", true, "lookahead", .5f, "time", 500));
-       iTween.MoveTo(m_PlayerObj, iTween.Hash("walk", 5, "time", 100, "orienttopath", true));    
+       iTween.MoveTo(m_PlayerObj, iTween.Vector3Update("walk") );    
     }
     private void OnDrawGizmos()
     {
