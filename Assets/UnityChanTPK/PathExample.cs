@@ -10,9 +10,13 @@ public class PathExample : MonoBehaviour
     [Range(0,1)]
     public float value;
     // Start is called before the first frame update
+   /* public static void LookFrom(GameObject target, Vector3 looktarget, float time){
+		LookFrom(target,Hash("m_walk",looktarget,"time",2));
+	}	*/
     void Start()
     {
         Debug.Log(iTween.PathLength(positionPoint));
+        
     }
     float tempTime;
     // Update is called once per frame
@@ -23,9 +27,11 @@ public class PathExample : MonoBehaviour
             value += Time.deltaTime / 10;
         }
        //iTween.PutOnPath(m_PlayerObj, positionPoint, value);
-       // iTween.PointOnPath(positionPoint, value);
-       //iTween.MoveTo(m_PlayerObj, iTween.Hash("walk", iTween.PutOnPath(positionPoint), "orienttopath", true, "lookahead", .5f, "time", 500));
-       iTween.MoveTo(m_PlayerObj, iTween.Hash("positionPoint",value));    
+     // iTween.RotateTo(m_PlayerObj, iTween.Hash("y", 45, "time", 100));
+      
+        //iTween.PointOnPath(positionPoint, value);
+      iTween.MoveTo(this.gameObject, iTween.Hash("x",5, "time", 100, "islocal", true));
+       //iTween.MoveTo(m_PlayerObj, iTween.Hash("positionPoint",value));    
     }
     private void OnDrawGizmos()
     {
