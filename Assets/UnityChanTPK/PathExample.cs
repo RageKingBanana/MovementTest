@@ -25,7 +25,7 @@ public class PathExample : MonoBehaviour
        //iTween.PutOnPath(m_PlayerObj, positionPoint, value);
        // iTween.PointOnPath(positionPoint, value);
        //iTween.MoveTo(m_PlayerObj, iTween.Hash("walk", iTween.PutOnPath(positionPoint), "orienttopath", true, "lookahead", .5f, "time", 500));
-       iTween.MoveTo(m_PlayerObj, iTween.Vector3Update("walk") );    
+       iTween.MoveTo(m_PlayerObj, iTween.Hash("positionPoint",value));    
     }
     private void OnDrawGizmos()
     {
